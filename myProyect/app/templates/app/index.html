@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es-ARG" dir="ltr">
+  <head>
+    {% load static %}{% block header %} {% endblock header %}
+  </head>
+
+  <body>
+    <!-- navbar -->
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <a class="navbar-brand" href="#">INICIO</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-4">
+          <li class="nav-item">
+            <a class="nav-link" data-value="about" href="#">SOBRE MI</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-value="portfolio" href="#">PORTFOLIO</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-value="blog" href="#">INSIGNEAS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-value="team" href="#"> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-value="contact" href="#">CONTACTO</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- header -->
+    <header class="header">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="description">
+          <h1>
+            Perfil del Ingeniero en Informática
+            <p style="text-align: justify">
+              El ingeniero de sistemas es un profesional que investiga,
+              desarrolla, diseña y crea modelos de procesos industriales y de
+              servicios fundados en sistemas informáticos en el área comercial,
+              administrativa y científica.
+            </p>
+            <button class="btn btn-outline-secondary btn-lg">Saber mas</button>
+          </h1>
+        </div>
+      </div>
+    </header>
+
+    <!-- about section -->
+    <div class="about" id="about">
+      <div class="container">
+        <h1 class="text-center">SOBRE MI</h1>
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <img src="{% static 'app/img/foto.jpg' %}" class="img-fluid" />
+            <span class="text-left"
+              >Especialista en desarrollo web fullstack</span
+            >
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-12 desc">
+            <h3>Di Ludovico Maximiliano</h3>
+            <p>
+              Estudiante de Ingeniería en informatica con carácter dinámico,
+              proactivo con capacidad analítica, autonomía y buena interacción
+              personal para crear, desarrollar e innovar soluciones digitales.
+              Aptitud para el liderazgo y trabajo en equipo. Interés por la
+              investigación e innovación tecnológica. Objetivo profesional
+              orientado al crecimiento de la empresa.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- portfolio -->
+    <div class="portfolio" id="portfolio">
+      <h1 class="text-center">Portfolio</h1>
+      <div class="container">
+        <div class="row">
+          {% block content %} {% for project in discografia %}
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="card mb-4 shadow-sm">
+              <img
+                class="card-img-top img-fluid"
+                src="{{ project.image.url }}"
+                alt=""
+              />
+            </div>
+            <div class="card-body card-text">
+              <h4>{{ project.title }}</h4>
+              <p>{{ project.description | linebreaksbr}}</p>
+            </div>
+          </div>
+          {% endfor %} {% endblock content %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Posts section -->
+    <div class="blog" id="blog">
+      <div class="container">
+        <h1 class="text-center">INSIGNEAS</h1>
+        <div class="row">
+          <div class="col-md-4 col-lg-4 col-sm-12">
+            <div class="card tarjeta">
+              <div class="card-img">
+                <img src="{% static 'app/img/unlam.jpg' %}" class="img-fluid" />
+              </div>
+              <div class="card-body">
+                <h4 class="card-title">
+                  Ingeniero en Informática con orientación en redes y sistemas
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-4 col-sm-12">
+            <div class="card tarjeta">
+              <div class="card-img">
+                <img src="{% static 'app/img/unlam.jpg' %}" class="img-fluid" />
+              </div>
+
+              <div class="card-body">
+                <h4 class="card-title">Analista programador universitario</h4>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-4 col-sm-12">
+            <div class="card tarjeta">
+              <div class="card-img">
+                <img
+                  src="{% static 'app/img/learning.png' %}"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="card-body">
+                <h4 class="card-title">Desarrollador web fullstack</h4>
+              </div>
+            </div>
+          </div>
+           <div class="espacio"></div>
+          <div class="col-md-4 col-lg-4 col-sm-12">
+            <div class="card tarjeta">
+              <div class="card-img">
+                <img
+                  src="{% static 'app/img/polotic.png' %}"
+                  class="img-fluid"
+                />
+                             </div>
+              <div class="card-body">
+                <h4 class="card-title">Desarrollador web fullstack Java</h4>
+              </div>
+            </div>
+          </div>
+           <div class="col-md-4 col-lg-4 col-sm-12">
+            <div class="card tarjeta">
+              <div class="card-img">
+                <img
+                  src="{% static 'app/img/cuv.jpg' %}"
+                  class="img-fluid"
+                />
+                             </div>
+              <div class="card-body">
+                <h4 class="card-title">Programador Web</h4>
+              </div>
+            </div>
+          </div>
+           <div class="col-md-4 col-lg-4 col-sm-12">
+            <div class="card tarjeta">
+              <div class="card-img">
+                <img
+                  src="{% static 'app/img/36.png' %}"
+                  class="img-fluid"
+                />
+                             </div>
+              <div class="card-body">
+                <h4 class="card-title">Especialista en desarrollo web fullstack</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Contact form -->
+    <div class="contact-form" id="contact">
+      <div class="container">
+        <form>
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+              <h1>Contáctame</h1>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 right">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control form-control-lg is-valid"
+                  placeholder="Ingresa tu nombre"
+                  name=""
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control form-control-lg is-valid"
+                  placeholder="Ingresa tu email"
+                  name="email"
+                />
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" placeholder="motivo del mensaje">
+                </textarea>
+              </div>
+              <input
+                type="submit"
+                class="btn btn-secondary btn-block"
+                value="Enviar"
+                name=""
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="app/vendor/js/jquery.slim.min.js"><\/script>'
+        );
+    </script>
+    <script src="app/vendor/js/bootstrap.min.js"></script>
+
+    <!-- end contenedor general -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap y Javascripts -->
+    <script src="{% static 'app/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'app/js/clean-blog.min.js' %}"></script>
+    <script script src="{% static 'app/js/main.js' %}"></script>
+    <!--Materialize JS-->
+    <script src="{% static 'app/js/materialize.js'%}"></script>
+    <script src="{% static 'app/js/materialize.min.js'%}"></script>
+    <!--Modernizr es un pequeño fragmento de código JavaScript que detecta automáticamente
+      la disponibilidad de tecnologías web de próxima generación en los navegadores de sus usuarios.
+       En lugar de incluir en la lista negra rangos completos de navegadores basados ​​en el 
+       " rastreo de UA " , Modernizr utiliza la detección de funciones para permitirle adaptar 
+       fácilmente las experiencias de sus usuarios en función de las capacidades reales de su navegador.
+Con este conocimiento que le brinda Modernizr, puede aprovechar estas nuevas características en los 
+navegadores que pueden renderizarlas o utilizarlas, y aún tener medios fáciles y confiables para controlar 
+la situación de los navegadores que no pueden.-->
+    <script src="{% static 'app/js/modernizr-custom.js'%}"></script>
+  </body>
+</html>
